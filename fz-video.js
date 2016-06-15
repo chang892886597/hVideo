@@ -99,7 +99,7 @@ function createVideo(dn,obj){
 			fzPools.work.style.width 	= videoCurrentTime() + "%";
 			fzPools.work2.style.width 	= videoCurrentTime() + "%";
 			fzPools.currentTm.innerHTML = timeConversion(parseInt(fzPools.VIDEO_DOM.currentTime));
-			fzPools.allTime 			= timeConversion(parseInt(videoAllTime()));
+			fzPools.allTime.innerHTML 	= timeConversion(parseInt(videoAllTime()));
 		}
 		//进度条点击事件
 		fzPools.percentage.onclick	= function(){
