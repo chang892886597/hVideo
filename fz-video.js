@@ -39,10 +39,10 @@ var FZFVIDEO =
 					'<div class="videoBoxRe">'+
 						'<i class="iconfont">&#xe603;</i>'+
 						'<ul id="videoSpeedList">'+
-							'<li class="videoSpeedStup">2.5倍</li>'+
-							'<li class="videoSpeedStup">2.0倍</li>'+
-							'<li class="videoSpeedStup">1.5倍</li>'+
-							'<li class="videoSpeedStup">默认</li>'+
+							'<li class="videoSpeedStup" id="bs4">2.5倍</li>'+
+							'<li class="videoSpeedStup" id="bs3">2.0倍</li>'+
+							'<li class="videoSpeedStup" id="bs2">1.5倍</li>'+
+							'<li class="videoSpeedStup" id="bs1">默认</li>'+
 						'</ul>'+
 					'</div>'+
 				'</div>'+
@@ -150,6 +150,19 @@ function createVideo(dn,obj){
 				fzPools.vSoundStop.innerHTML = '&#xe604;';
 			}
 		}
+		//倍速按钮
+		fzPools.bs1.onclick = function(){
+			fzPools.VIDEO_DOM.playbackRate = 1;
+		}
+		fzPools.bs2.onclick = function(){
+			fzPools.VIDEO_DOM.playbackRate = 1.5;
+		}
+		fzPools.bs3.onclick = function(){
+			fzPools.VIDEO_DOM.playbackRate = 2;
+		}
+		fzPools.bs4.onclick = function(){
+			fzPools.VIDEO_DOM.playbackRate = 2.5;
+		}
 	}
 
 	//创建播放器
@@ -180,6 +193,10 @@ function createVideo(dn,obj){
 		fzPools.soundBarBox = document.getElementById("soundBar");
 		fzPools.soundBar  	= document.getElementById("currentSound");
 		fzPools.vSoundStop 	= document.getElementById("videoSoundStop");
+		fzPools.bs1 		= document.getElementById("bs1");
+		fzPools.bs2 		= document.getElementById("bs2");
+		fzPools.bs3 		= document.getElementById("bs3");
+		fzPools.bs4 		= document.getElementById("bs4");
 	}
 
 	//获取元素的宽度

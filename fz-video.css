@@ -131,11 +131,7 @@
 
 #percentage{
 	position: relative;
-    /*position: absolute;
-    top: 0;*/
-    /*left: 15%;
-    width: 66%;
-    height: 40px;*/
+    z-index: 1001;
     -webkit-box-flex: 8; 
     box-flex: 8;
     float: left;
@@ -198,6 +194,7 @@
     top: 0;
     opacity: 1;
     height: 100%;
+    cursor: pointer;
 }
 
 #percentage:hover #currentPerc{
@@ -241,10 +238,7 @@
 	text-align: center;
 	position: relative;
 	line-height: 40px;
-   /* position: absolute;
-    left: 96%;*/
     color: #fff;
-    /*top: 11px;*/
     box-flex:0.5;
     -webkit-box-flex:0.5;
     cursor: pointer;
@@ -266,16 +260,15 @@
 }
 #videoSpeedList li{
 	overflow: hidden;
-    background: rgba(0,0,0,.7);
+    background: rgba(48,40,44,.5);
     margin-bottom: 1px;
-    border-radius: 5px;
     text-align: center;
     padding: 5px 0;
     font-size: 12px;
     line-height: normal;
 }
 #videoSpeedList li:hover{
-    background: rgba(0,0,0,1);
+    background: rgba(0,0,0,0.5);
 }
 .videoBoxRe{
     position: relative;
