@@ -79,16 +79,19 @@ function createVideo(dn,obj){
 	this.init		= function(){
 		//设置播放器地址
 		this.setUrl(obj.url);
+
 		//判断是否自动播放
 		if(obj.autoplay){
 			this.videoDOM.autoplay = true;
 		} else {
 			this.videoDOM.autoplay = false;
 		}
+
 		//容器点击事件
 		fzPools.VIDEO_DOM.onclick = function(){
 			stopOrplay();
 		}
+
 		//时间改变事件
 		fzPools.VIDEO_DOM.ontimeupdate = function(){
 			if( fzPools.VIDEO_DOM.paused ){
@@ -101,12 +104,21 @@ function createVideo(dn,obj){
 			fzPools.currentTm.innerHTML = timeConversion(parseInt(fzPools.VIDEO_DOM.currentTime));
 			fzPools.allTime.innerHTML 	= timeConversion(parseInt(videoAllTime()));
 		}
+
+		//音量改变事件
+		fzPools.VIDEO_DOM.onvolumechange = function(){
+			var soundSize 		= fzPools.VIDEO_DOM.volume;
+			var soundBarWidth 	= getDomWidth('soundBar') * soundSize;
+			fzPools.soundBar.style.width = soundBarWidth + "px";
+		}
+
 		//进度条点击事件
 		fzPools.percentage.onclick	= function(){
 			var widthCurr 	= mouseCurrentX('percentage')/getDomWidth('percentage');
 
 			fzPools.VIDEO_DOM.currentTime = videoAllTime() * widthCurr;
 		}
+
 		//播放按钮
 		fzPools.playOrStop.onclick = function(){
 			if( fzPools.VIDEO_DOM.paused ){
@@ -115,6 +127,27 @@ function createVideo(dn,obj){
 			} else {
 				fzPools.VIDEO_DOM.pause();
 				fzPools.playIcon.innerHTML = "&#xe602";
+			}
+		}
+
+		//音量调节
+		fzPools.soundBarBox.onclick = function(){
+			var soundBarWidth 	= getDomWidth('soundBar');
+			var clickWidth 		= mouseCurrentX('soundBar');
+			fzPools.VIDEO_DOM.volume = clickWidth/soundBarWidth.toFixed(2);
+			
+		}
+
+		//音量按钮
+		fzPools.vSoundStop.onclick = function(){
+			if( fzPools.VIDEO_DOM.muted ){
+				fzPools.VIDEO_DOM.muted = false;
+				fzPools.VIDEO_DOM.volume = 0.99;
+				fzPools.vSoundStop.innerHTML = '&#xe605;';
+			} else {
+				fzPools.VIDEO_DOM.muted = true;
+				fzPools.VIDEO_DOM.volume = 0;
+				fzPools.vSoundStop.innerHTML = '&#xe604;';
 			}
 		}
 	}
@@ -131,7 +164,7 @@ function createVideo(dn,obj){
 			return;
 		}
 	}
-/*------------------------------------------------------------------------------*/
+/*--------------------------------------方法-------------------------------------*/
 	//将节点存入节点池
 	function saveDom(){
 		fzPools.VIDEO_DOM 	= document.getElementById("fz-videoAct");
@@ -144,6 +177,9 @@ function createVideo(dn,obj){
 		fzPools.playIcon 	= document.getElementById("playIcon");
 		fzPools.bfBtn 		= document.getElementById("bfBtn");
 		fzPools.sptxt 		= document.getElementById("sptxt");
+		fzPools.soundBarBox = document.getElementById("soundBar");
+		fzPools.soundBar  	= document.getElementById("currentSound");
+		fzPools.vSoundStop 	= document.getElementById("videoSoundStop");
 	}
 
 	//获取元素的宽度
