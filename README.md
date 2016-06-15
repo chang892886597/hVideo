@@ -20,3 +20,5 @@
 		createVideo的第一个参数为播放器容器的id,播放器宽高等同于容器的宽高
 		url			: 视频的地址
 		autoplay	: 视频准备就绪后,是否自动播放,true为自动播放,否则false
+### 方法说明
+		FZ_VIDEO.setUrl("URL");		//切换视频,传入视频地址进行切换

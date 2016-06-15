@@ -64,6 +64,7 @@ function createVideo(dn,obj){
 	var fzPools = {
 
 	}
+
 	//获取节点
 	this.D		= function(dms){
 		var dom_ = document.getElementById(dms);
