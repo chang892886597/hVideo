@@ -4,10 +4,8 @@
 ### 在head标签内引入fz-video.css与iconfont.css
 		<link rel="stylesheet" href="./fz-video.css">
 		<link rel="stylesheet" href="./font/iconfont.css">
-
 ### 在body底部引入fz-video.js
 		<script src="./fz-video.js"></script>
-
 ### 随后实例化播放器即可
 		<script>
 			var test = new createVideo(
@@ -18,3 +16,7 @@
 		 		}
 	 		);
 	 	</script>
+### 参数说明
+		createVideo的第一个参数为播放器容器的id,播放器宽高等同于容器的宽高
+		url			: 视频的地址
+		autoplay	: 视频准备就绪后,是否自动播放,true为自动播放,否则false
