@@ -1,14 +1,14 @@
 基于html5的播放器
 ====================
 ### 引入相应js和css,然后实例化即可使用
-### 在head标签内引入fz-video.css与iconfont.css <br />
+### 在head标签内引入fz-video.css与iconfont.css
 		<link rel="stylesheet" href="./fz-video.css">
 		<link rel="stylesheet" href="./font/iconfont.css">
 
-### 在body底部引入fz-video.js <br />
+### 在body底部引入fz-video.js
 		<script src="./fz-video.js"></script>
 
-### 随后实例化播放器即可 <br />
+### 随后实例化播放器即可
 		<script>
 			var test = new createVideo(
 	 		"testBox",	//容器的id
