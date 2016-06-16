@@ -8,7 +8,7 @@
 		<script src="./fz-video.js"></script>
 ### 随后实例化播放器即可
 		<script>
-			var test = new createVideo(
+			var FZ_VIDEO = new createVideo(
 	 		"testBox",	//容器的id
 		 		{
 		 			url 		: 'http://171.15.197.89/xdispatch/o8t28neoq.bkt.clouddn.com/test.mp4', 	//视频地址
@@ -21,4 +21,7 @@
 		url			: 视频的地址
 		autoplay	: 视频准备就绪后,是否自动播放,true为自动播放,否则false
 ### 方法说明
+		var FZ_VIDEO = new createVideo(参数);	//实例化并创建播放器
+
 		FZ_VIDEO.setUrl("URL");		//切换视频,传入视频地址进行切换
+		FZ_VIDEO.overVideo();		//移除播放器,且销毁实例

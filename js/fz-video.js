@@ -178,6 +178,17 @@ function createVideo(dn,obj){
 			return;
 		}
 	}
+
+	//销毁实例
+	this.overVideo = function(){
+		var ovDom = document.getElementById(dn);
+		var childs = ovDom.childNodes;
+		var  length = childs.length;
+		for( var i = 0; i < length; i++ ){
+			ovDom.removeChild(childs[0]);
+		}
+		FZ_VIDEO = '';
+	}
 /*--------------------------------------方法-------------------------------------*/
 	//将节点存入节点池
 	function saveDom(){
