@@ -25,4 +25,3 @@
 
 		FZ_VIDEO.setUrl("URL");		//切换视频,传入视频地址进行切换
 		FZ_VIDEO.overVideo();		//移除播放器,且销毁实例
-		

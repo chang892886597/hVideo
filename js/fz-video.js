@@ -65,6 +65,9 @@ function createVideo(dn,obj){
 
 	}
 
+	//点击后停止现实缓冲动画标记
+	var hcqStop = 0;
+
 	//获取节点
 	this.D		= function(dms){
 		var dom_ = document.getElementById(dms);
@@ -104,6 +107,22 @@ function createVideo(dn,obj){
 			fzPools.work2.style.width 	= videoCurrentTime() + "%";
 			fzPools.currentTm.innerHTML = timeConversion(parseInt(fzPools.VIDEO_DOM.currentTime));
 			fzPools.allTime.innerHTML 	= timeConversion(parseInt(videoAllTime()));
+			if( hcqStop == 0 ){
+				var hcq  = parseInt((fzPools.VIDEO_DOM.buffered.end(0) / videoAllTime()).toFixed(2) * 100);
+				fzPools.currentBG.style.width = hcq + "%";
+			} else {
+				fzPools.currentBG.style.width = 100 + "%";
+			}
+		}
+
+		//缓冲暂停事件
+		fzPools.VIDEO_DOM.onwaiting = function(){
+			openLoading("on","加载中");
+		}
+
+		//缓冲完毕继续播放事件
+		fzPools.VIDEO_DOM.onplaying = function(){
+			openLoading("off");
 		}
 
 		//音量改变事件
@@ -116,8 +135,8 @@ function createVideo(dn,obj){
 		//进度条点击事件
 		fzPools.percentage.onclick	= function(){
 			var widthCurr 	= mouseCurrentX('percentage')/getDomWidth('percentage');
-
 			fzPools.VIDEO_DOM.currentTime = videoAllTime() * widthCurr;
+			hcqStop = 1;
 		}
 
 		//播放按钮
@@ -205,6 +224,7 @@ function createVideo(dn,obj){
 		fzPools.soundBarBox = document.getElementById("soundBar");
 		fzPools.soundBar  	= document.getElementById("currentSound");
 		fzPools.vSoundStop 	= document.getElementById("videoSoundStop");
+		fzPools.currentBG   = document.getElementById("currentBG");
 		fzPools.bs1 		= document.getElementById("bs1");
 		fzPools.bs2 		= document.getElementById("bs2");
 		fzPools.bs3 		= document.getElementById("bs3");
@@ -274,7 +294,7 @@ function createVideo(dn,obj){
 		} else {
 			fzPools.bfBtn.style.visibility = "hidden";
 			fzPools.bfBtn.style.opacity = "0";
-			fzPools.sptxt.innerHTML = msg;
+			fzPools.sptxt.innerHTML = '';
 		}
 	}
 	this.createDom();
