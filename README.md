@@ -24,4 +24,4 @@
 		var FZ_VIDEO = new createVideo(参数);	//实例化并创建播放器
 
 		FZ_VIDEO.setUrl("URL");		//切换视频,传入视频地址进行切换
-		FZ_VIDEO.overVideo();		//移除播放器,且销毁实例
+		FZ_VIDEO.overVideo();		//移除播放器,且销毁实例,销毁后可重新进行实例化播放器

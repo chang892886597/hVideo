@@ -70,12 +70,12 @@ function createVideo(dn,obj){
 
 	//获取节点
 	this.D		= function(dms){
-		var dom_ = document.getElementById(dms);
+		var dom_	= document.getElementById(dms);
 		return dom_;
 	}
 
 	//设置播放器地址
-	this.setUrl 	= function(url){
+	this.setUrl		= function(url){
 		this.D('fz-videoAct').src = url;
 	}
 
