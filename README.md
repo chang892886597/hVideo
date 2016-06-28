@@ -1,5 +1,5 @@
 ##基于html5的播放器
-![image](https://github.com/fzninja/fzninja.github.io/tree/master/img/gitAss/fzvideo.png)
+![image](./fzvideo.png)
 [演示地址](https://fzninja.github.io/#/assembly/fz-video)
 ####在head标签内引入fz-video.css与iconfont.css
 		<link rel="stylesheet" href="./fz-video.css">
