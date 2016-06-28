@@ -1,7 +1,6 @@
 ##基于html5的播放器
-====================
+_____________
 [演示地址](https://fzninja.github.io/#/assembly/fz-video)
-####引入相应js和css,然后实例化即可使用
 ####在head标签内引入fz-video.css与iconfont.css
 		<link rel="stylesheet" href="./fz-video.css">
 		<link rel="stylesheet" href="./font/iconfont.css">
