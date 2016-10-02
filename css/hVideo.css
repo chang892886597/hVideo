@@ -15,13 +15,13 @@ font-size:16px;font-style:normal;
 -moz-osx-font-smoothing: grayscale;
 }
 /*loading*/
-.fz-loading{
+.h-loading{
 	width: 100%;
 	height: 100%;
 	position: relative;
 }
 
-#bfBtn{
+.bfBtn{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -34,12 +34,12 @@ font-size:16px;font-style:normal;
 	-webkit-transition: visibility 0.3s, opacity 0.3s;
 }
 .spinner {
-  width: 50px;
+  width: 55px;
   height: 60px;
   text-align: center;
   font-size: 10px;
 }
-#sptxt{
+.sptxt{
 	position: absolute;
     width: 100%;
     color: #fff;
@@ -96,14 +96,14 @@ font-size:16px;font-style:normal;
 }
 
 /*播放器*/
-#fz-videoBox{
+.h-videoBox{
 	width: 100%;
 	height: 100%;
 	position: relative;
 	background: #f1f1f1;
 }
 
-#fz-videoAct{
+.h-videoAct{
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -111,15 +111,15 @@ font-size:16px;font-style:normal;
 	height: 100%;
 }
 
-#fz-videoBox:hover{
+.h-videoBox:hover{
 	cursor: pointer;
 }
 
-#fz-videoBox:hover #videoState{
+.h-videoBox:hover .videoState{
 	opacity: 1;
 }
 
-#videoState{
+.videoState{
 	width: 100%;
     height: 40px;
     position: absolute;
@@ -132,11 +132,11 @@ font-size:16px;font-style:normal;
     -webkit-transition: opacity 0.3s;
 }
 
-#videoState:hover{
+.videoState:hover{
     cursor: default;
 }
 
-#videoStateBox{
+.videoStateBox{
 	position: relative;
     width: 100%;
     height: 100%;
@@ -144,14 +144,14 @@ font-size:16px;font-style:normal;
     display: -webkit-box;
 }
 
-#percentage{
+.percentage{
 	position: relative;
     z-index: 1001;
     -webkit-box-flex: 8; 
     box-flex: 8;
     float: left;
 }
-#currentBG{
+.currentBG{
     position: absolute;
     left: 0;
     top: 49%;
@@ -163,7 +163,7 @@ font-size:16px;font-style:normal;
     -webkit-transition: background 0.3s,top 0.3s,height 0.3s,opacity 0.3s,width 0.3s;
 }
 
-#currentPercentage{
+.currentPercentage{
     position: absolute;
     left: 0;
     top: 49%;
@@ -175,7 +175,7 @@ font-size:16px;font-style:normal;
     -webkit-transition:width 0.3s;
 }
 
-#currentAll{
+.currentAll{
     position: absolute;
     width: 100%;
     height: 3px;
@@ -184,7 +184,7 @@ font-size:16px;font-style:normal;
     z-index: -999;
 }
 
-#currentPerc{
+.currentPerc{
     position: absolute;
     left: 0;
     top: 50%;
@@ -196,29 +196,29 @@ font-size:16px;font-style:normal;
     transition: top 0.3s,height 0.3s,opacity 0.3s,width 0.6s;
     -webkit-transition: top 0.3s,height 0.3s,opacity 0.3s width 0.6s;
 }
-
-#percentage:hover #currentBG{
+.percentage:hover{
     cursor: pointer;
+}
+.percentage:hover .currentBG{
     background: rgba(181, 181, 181, 0.4);
     top: 0;
     height: 100%;
     opacity: 1;
 }
 
-#percentage:hover #currentPerc{
-    top: 0;
-    opacity: 1;
-    height: 100%;
-    cursor: pointer;
-}
-
-#percentage:hover #currentPerc{
+.percentage:hover .currentPerc{
     top: 0;
     opacity: 1;
     height: 100%;
 }
 
-#playOrStop{
+.percentage:hover .currentPerc{
+    top: 0;
+    opacity: 1;
+    height: 100%;
+}
+
+.playOrStop{
 	float: left;
 	position: relative;
  	/*position: absolute;*/
@@ -234,7 +234,7 @@ font-size:16px;font-style:normal;
     cursor: pointer;
 }
 
-#currentTimeBox{
+.currentTimeBox{
 	position: relative;
 	float: left;
 	-webkit-box-flex: 0.5; 
@@ -248,7 +248,7 @@ font-size:16px;font-style:normal;
     /*left: 6%;*/
 }
 
-#videoSpeed{
+.videoSpeed{
 	float: left;
 	text-align: center;
 	position: relative;
@@ -258,11 +258,11 @@ font-size:16px;font-style:normal;
     -webkit-box-flex:0.5;
     cursor: pointer;
 }
-#videoSpeed:hover #videoSpeedList{
+.videoSpeed:hover .videoSpeedList{
     visibility: visible;
     opacity: 1;
 }
-#videoSpeedList{
+.videoSpeedList{
     visibility: hidden;
     opacity: 0;
     overflow: hidden;
@@ -273,7 +273,7 @@ font-size:16px;font-style:normal;
     transition: opacity 0.3s;
     -webkit-transition:opacity 0.3s;
 }
-#videoSpeedList li{
+.videoSpeedList li{
 	overflow: hidden;
     background: rgba(48,40,44,.5);
     margin-bottom: 1px;
@@ -282,13 +282,13 @@ font-size:16px;font-style:normal;
     font-size: 12px;
     line-height: normal;
 }
-#videoSpeedList li:hover{
+.videoSpeedList li:hover{
     background: rgba(0,0,0,0.5);
 }
 .videoBoxRe{
     position: relative;
 }
-#videoSound{
+.videoSound{
 	position: relative;
 	float: left;
 	/*position: absolute;
@@ -300,10 +300,10 @@ font-size:16px;font-style:normal;
     color: #fff;
     cursor: pointer;
 }
-#videoSoundBox{
+.videoSoundBox{
     position: relative;
 }
-#soundBar{
+.soundBar{
     position: absolute;
     background: #000;
     width: 66%;
@@ -311,7 +311,7 @@ font-size:16px;font-style:normal;
     top: 16px;
     left: 21px;
 }
-#currentSound{
+.currentSound{
     width: 50%;
     height: 100%;
     background: #2d85ca;
