@@ -19,4 +19,5 @@
 		autoplay : 是否自动播放,默认为true
 		constrols : 是否显示播放器控件,默认为true
 API
+
 		[所有API请访问我的个人网站查看,有任何问题也可在我的个人网站留言](http://huangyaoxin.com/home/index/detial/id/29/path/29)
