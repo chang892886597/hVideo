@@ -21,6 +21,7 @@
 
 	body{
 		font-family: "微软雅黑";
+		background: #efefef;
 	}
 
 	#test1{
@@ -33,26 +34,34 @@
 		height: 537px;
 		margin: 0 auto;
 	}
+	h2{
+		text-align: center;
+		font-size: 18px;
+		margin: 10px 0;
+	}
 </style>
 <link rel="stylesheet" href="./css/hVideo.min.css">
 </head>
 <body>
+	<h2>请在实例化参数url中填写视频地址,即可播放</h2>
 	<div id="test1">
 	</div>
+	<h2>请在实例化参数url中填写视频地址,即可播放</h2>
 	<div id="test2">
 	</div>
 <script src="./js/hVideo.min.js"></script>
 <script>
  	var video1 = new hVideo({
  		id : 'test1',
- 		url : 'testVideo.mp4',
+ 		url : '1',
  		autoplay : true,
  		controls : true
  	});
  	var video2 = new hVideo({
  		id : 'test2',
- 		url : 'testVideo.mp4',
- 		autoplay : true
+ 		url : '1',
+ 		autoplay : true,
+ 		controls : true
  	});
 </script>
 </body>
